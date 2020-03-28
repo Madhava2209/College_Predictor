@@ -1,0 +1,17 @@
+{% extends 'bootswatch.html' %}
+{% block body %}
+<p>User <b>{{user.username}}</b> is logged in successfully.</p>
+<form action="/get_list/" method="post" class="form-group">
+    {% csrf_token %}
+    <p>Rank</p>
+    <input type="number" name="rank" placeholder="Enter rank" class="form-control">
+    <p>Category</p>
+    <input type="text" name="category" placeholder="Enter Category" class="form-control">
+    <p>Branch</p>
+    <input type="text" name="branch" placeholder="Enter Branch" class="form-control">
+    <br> 
+    <button type="submit" class="btn btn-outline-warning" style="margin-left:80px;"> Submit</button>
+
+</form>
+
+{% endblock %}

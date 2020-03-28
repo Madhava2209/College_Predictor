@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Predictor</title>
+    <link rel="stylesheet" href="/static/predict.css">
+</head>
+<body>
+    <div class="flashit">
+        
+        <div class="navbar">
+            <div style="display: flex; justify-content:flex-start;align-items: center; padding-left: 100px;">
+                <a href="/home/"><img src="/static/logo.PNG" alt="" width="70px" height="70px" style="border-radius:5px;"></a>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between;align-items: center;padding-right: 100px;">
+                {% if not user.is_authenticated %}
+                <button style="margin-right: 10px;"><a href="/signup/"><b>Sign UP</b></a></button>
+                <button style="margin-right: 10px;"><a href="/login/"><b>Login</b></a></button>
+                {% elif user.is_authenticated %}
+                <button><a href="/logout/"><b>Logout</b></a></button>
+                {% endif %}
+            </div>
+        </div>
+        <div class="card">
+            {% block body %}
+            {% endblock %}
+        </div>
+    
+    </div>
+</body>
+</html>

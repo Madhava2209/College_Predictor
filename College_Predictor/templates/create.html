@@ -1,0 +1,22 @@
+{% extends 'bootswatch.html' %}
+{% block body %}
+<form action="/create/" method="POST" name="Add College" class="form-group">
+    {% csrf_token %}
+    <p>College Name:</p>
+    <input type="text" name="college_name" class="form-control">
+    <p>College ID</p>
+    <input type="text" name="college_id" class="form-control">
+    <p>Location</p>
+    <input type="text" name="location" class="form-control">
+    <p>Rank</p>
+    <input type="number" name="rank" class="form-control">
+    <p>Category</p>
+    <input type="text" name="category" class="form-control">
+    <p>Branch</p>
+    <input type="text" name="branch" class="form-control">
+    <br>
+    <button type="submit" class="btn btn-outline-success" style="margin-left: 80px;" >Add</button>
+
+</form>
+
+{% endblock %}

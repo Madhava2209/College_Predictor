@@ -1,0 +1,36 @@
+{% extends 'bootswatch.html' %}
+
+{% block body %}
+<table class="table table-hover">
+    <tr class="table-primary">
+        <th>College_Name</th>
+        <th>CollegeID</th>
+        <th>Location</th>
+        <th>Rank</th>
+        <th>Category</th>
+        <th>Branch</th>
+        <th>About</th>
+        {% if user.is_staff %}
+        <th>Update</th>
+        <th>Delete</th>
+        {% endif %}
+    </tr>
+    {% for clg in all_clg %}
+    <tr class="table-secondary">
+        <td>{{clg.college_Name}}</td>
+        <td>{{clg.college_ID}}</td>
+        <td>{{clg.location}}</td>
+        <td>{{clg.rank}}</td>
+        <td>{{clg.category}}</td>
+        <td>{{clg.branch}}</td>
+        <td><a href="{{clg.about}}">Click here</a></td>
+        {% if user.is_staff %}
+        <td><a href="/edit/{{clg.id}}/">Click here</a></td>
+        <td><a href="/delete/{{clg.id}}/">Click here</a></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'bootswatch.html' %}
+{% block body %}
+<h1>Edit College</h1>
+<form action="/edit/{{college.id}}/" method="post" class="form-group">
+    {% csrf_token %}
+    <p>College_Name</p>
+    <input type="text" name="clg_name"  value="{{clg.college_Name}}" class="form-control">
+    <p>College_ID</p>
+    <input type="text" name="clg_id" value="{{clg.college_ID}}" class="form-control">
+    <p>Rank</p>
+    <input type="number" name="rank" value="{{clg.rank}}" class="form-control">
+    <p>Branch</p>
+    <input type="text" name="branch" value="{{clg.branch}}" class="form-control"> 
+    <p>Category</p>
+    <input type="text" name="category" value="{{clg.category}}" class="form-control">
+    <p>Location</p>
+    <input type="text" name="location" value="{{clg.location}}" class="form-control">
+    <p>About</p>
+    <input type="text" name="about" value="{{clg.about}}" class="form-control">
+    <br>
+    <button class="btn btn-success" type="submit" >Save</button>
+
+</form>
+
+{% endblock %}
