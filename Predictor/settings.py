@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'College_Predictor',
     'django_extensions',
+    'authentication',
 ]
 
 MIDDLEWARE = [
